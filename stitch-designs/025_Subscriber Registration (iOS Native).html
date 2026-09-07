@@ -1,0 +1,244 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<title>Create Account - OnlyIndians</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+    @layer base {
+      html, body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        background-color: #F2F2F7;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", sans-serif;
+        -webkit-tap-highlight-color: transparent;
+      }
+      body {
+        overscroll-behavior-y: none;
+      }
+      .pb-safe {
+        padding-bottom: max(env(safe-area-inset-bottom, 20px), 20px);
+      }
+      .pt-safe {
+        padding-top: max(env(safe-area-inset-top, 0px), 0px);
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "ios-bg": "#F2F2F7",
+            "ios-card": "#FFFFFF",
+            "ios-blue": "#007AFF",
+            "ios-blue-hover": "#0062CC",
+            "ios-separator": "#E5E5EA",
+            "ios-label": "#000000",
+            "ios-secondary": "#8E8E93",
+            "ios-placeholder": "#C7C7CD",
+            "ios-destructive": "#FF3B30",
+            "primary": "#007AFF"
+          },
+          borderRadius: {
+            "ios-card": "16px",
+            "ios-btn": "14px"
+          },
+          fontFamily: {
+            "sans": ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "SF Pro Text", "Inter", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      min-height: max(844px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-[#F2F2F7] text-black antialiased flex flex-col min-h-screen select-none">
+<!-- Apple iOS Compact Navigation Bar -->
+<header class="sticky top-0 inset-x-0 z-50 bg-white/95 backdrop-blur-md border-b border-black/[0.08] pt-safe transition-all">
+  <div class="relative h-11 px-4 flex items-center justify-between max-w-lg mx-auto w-full">
+    <!-- Left Back Action -->
+    <button aria-label="Back" class="inline-flex items-center gap-1 text-[#2563eb] text-[17px] font-normal active:opacity-60 transition-opacity -ml-1 z-10" onclick="history.back()" type="button">
+      <svg class="w-[20px] h-[20px] stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+      <span class="text-[17px] tracking-tight">Back</span>
+    </button>
+    <!-- Absolutely Centered Screen Title -->
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <span class="text-[17px] font-semibold text-slate-900 tracking-tight">Create Account</span>
+    </div>
+    <!-- Right Action Link -->
+    <a class="text-[#2563eb] text-[17px] font-normal active:opacity-60 transition-opacity -mr-1 z-10" href="#">
+      Sign In
+    </a>
+  </div>
+</header>
+<!-- Main Scrollable Content Container -->
+<main class="flex-1 flex flex-col w-full px-4 pt-5 pb-safe max-w-lg mx-auto">
+<div class="w-full space-y-6 flex-1 flex flex-col justify-between">
+<div class="space-y-6">
+<!-- iOS Large Title & Subtitle Hierarchy -->
+<div class="space-y-1.5 px-1 pt-1">
+<h1 class="text-[30px] leading-[36px] font-bold tracking-tight text-black">Create Account</h1>
+<p class="text-[15px] leading-relaxed text-[#8E8E93] font-normal">
+            Join OnlyIndians to subscribe and support creators directly with INR subscriptions.
+          </p>
+</div>
+<!-- Registration Form styled as Cupertino Inset Grouped Table View -->
+<form class="space-y-6" id="subscriber-reg-form" onsubmit="event.preventDefault(); handleRegistrationSubmit();">
+<div class="space-y-2">
+<!-- Cupertino Inset Grouped Card (16px border-radius, white background, hairline dividers) -->
+<div class="rounded-[16px] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04)] border border-black/[0.06] overflow-hidden divide-y divide-[#E5E5EA]">
+<!-- Row 1: Mobile Phone (+91 badge) -->
+<div class="flex items-center min-h-[52px] px-4 gap-3 bg-white">
+<label class="w-[74px] text-[17px] text-black font-normal shrink-0" for="phone-input">Mobile</label>
+<div class="flex items-center gap-1.5 bg-[#F2F2F7] px-2.5 py-1 rounded-[8px] border border-black/[0.04] text-black font-medium text-[15px] shrink-0 select-none">
+<span class="text-base leading-none">🇮🇳</span>
+<span class="text-black font-medium tracking-tight text-[15px]">+91</span>
+</div>
+<input class="flex-1 h-[52px] bg-transparent text-[17px] text-black placeholder:text-[#C7C7CD] focus:outline-none border-0 focus:ring-0 p-0 tracking-tight" id="phone-input" inputmode="tel" maxlength="11" pattern="[0-9\s]{10,11}" placeholder="98765 43210" required="" type="tel">
+</div>
+<!-- Row 2: Email -->
+<div class="px-4 py-3 bg-white">
+<div class="flex items-center min-h-[30px] gap-3">
+<label class="w-[74px] text-[17px] text-black font-normal shrink-0" for="email-input">Email</label>
+<input class="flex-1 h-[32px] bg-transparent text-[17px] text-black placeholder:text-[#C7C7CD] focus:outline-none border-0 focus:ring-0 p-0" id="email-input" placeholder="name@example.in" required="" type="email">
+</div>
+<p class="text-[12px] text-[#8E8E93] mt-1 pl-[86px] tracking-tight">
+                  Verification link sent via email. Zero SMS OTP.
+                </p>
+</div>
+<!-- Row 3: Password -->
+<div class="flex items-center min-h-[52px] px-4 gap-3 bg-white">
+<label class="w-[74px] text-[17px] text-black font-normal shrink-0" for="password-input">Password</label>
+<input class="flex-1 h-[52px] bg-transparent text-[17px] text-black placeholder:text-[#C7C7CD] focus:outline-none border-0 focus:ring-0 p-0" id="password-input" minlength="8" placeholder="Min. 8 characters" required="" type="password">
+<button aria-label="Toggle password view" class="w-8 h-8 flex items-center justify-center text-[#8E8E93] hover:text-black active:scale-95 transition-transform shrink-0" id="toggle-pwd-btn" onclick="togglePasswordVisibility('password-input', 'toggle-pwd-icon')" type="button">
+<span class="material-symbols-outlined text-[20px]" id="toggle-pwd-icon">visibility</span>
+</button>
+</div>
+<!-- Row 4: Confirm Password -->
+<div class="flex items-center min-h-[52px] px-4 gap-3 bg-white">
+<label class="w-[74px] text-[17px] text-black font-normal shrink-0" for="confirm-password-input">Confirm</label>
+<input class="flex-1 h-[52px] bg-transparent text-[17px] text-black placeholder:text-[#C7C7CD] focus:outline-none border-0 focus:ring-0 p-0" id="confirm-password-input" minlength="8" placeholder="Re-enter password" required="" type="password">
+<button aria-label="Toggle confirm password view" class="w-8 h-8 flex items-center justify-center text-[#8E8E93] hover:text-black active:scale-95 transition-transform shrink-0" id="toggle-confirm-pwd-btn" onclick="togglePasswordVisibility('confirm-password-input', 'toggle-confirm-pwd-icon')" type="button">
+<span class="material-symbols-outlined text-[20px]" id="toggle-confirm-pwd-icon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Apple-style secondary footnote beneath table -->
+<p class="px-4 text-[13px] leading-[18px] text-[#8E8E93] pt-1">
+              Your Indian phone number is your primary account ID. Email is required exclusively for account activation. Zero SMS OTP required.
+            </p>
+</div>
+<!-- Terms of Service and Privacy Policy Toggle/Agreement -->
+<div class="px-2 pt-1">
+<label class="flex items-start gap-3 cursor-pointer select-none">
+<input class="mt-0.5 h-[20px] w-[20px] rounded-[6px] border-[#C7C7CD] text-[#007AFF] focus:ring-0 focus:ring-offset-0 cursor-pointer" id="terms-check" required="" type="checkbox">
+<span class="text-[14px] leading-snug text-[#3C3C43]/80">
+                I agree to the <a class="text-[#007AFF] active:opacity-50 font-medium" href="#">Terms of Service</a> and <a class="text-[#007AFF] active:opacity-50 font-medium" href="#">Privacy Policy</a>.
+              </span>
+</label>
+</div>
+<!-- Primary Native iOS Action Button (50px tall, rounded-xl / pill, iOS Blue) -->
+<div class="pt-2">
+<button class="w-full h-[50px] rounded-[14px] bg-[#007AFF] text-white text-[17px] font-semibold flex items-center justify-center shadow-sm active:scale-[0.98] active:bg-[#0062CC] transition-all" id="submit-button" type="submit">
+<span class="">Create Subscriber Account</span>
+</button>
+</div>
+</form>
+<!-- Submission Feedback Notification -->
+<div class="hidden rounded-[16px] bg-white border border-black/[0.06] p-6 shadow-xs text-center space-y-3.5" id="registration-feedback">
+<div class="w-14 h-14 mx-auto rounded-full bg-[#E5F1FF] text-[#007AFF] flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px]">mark_email_read</span>
+</div>
+<div class="space-y-1">
+<h3 class="text-[19px] font-bold text-black tracking-tight">Verification Email Sent</h3>
+<p class="text-[14px] text-[#8E8E93] leading-relaxed">
+              We've dispatched an activation link to your inbox. Tap it to start supporting creators immediately.
+            </p>
+</div>
+<div class="pt-2">
+<button class="w-full h-[46px] rounded-[12px] bg-[#F2F2F7] text-[#007AFF] text-[16px] font-semibold active:opacity-70 transition-opacity" onclick="location.reload()" type="button">
+              Done
+            </button>
+</div>
+</div>
+<!-- Secondary Action: Sign In -->
+<div class="text-center pt-1">
+<p class="text-[15px] text-[#8E8E93]">
+            Already have an account? <a class="text-[#007AFF] font-medium active:opacity-50 transition-opacity" href="#">Sign In</a>
+</p>
+</div>
+</div>
+<!-- Bottom Creator Gateway Footnote Card -->
+<div class="pt-8 pb-3">
+<a class="flex items-center justify-between p-4 rounded-[14px] bg-white border border-black/[0.06] shadow-xs active:bg-[#F2F2F7] transition-colors" href="#">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-[#007AFF]/10 text-[#007AFF] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div class="text-left">
+<span class="text-[14px] font-medium text-black">Are you a creator?</span>
+<p class="text-[12px] text-[#8E8E93]">Launch INR subscriptions via Creator Studio</p>
+</div>
+</div>
+<div class="flex items-center gap-0.5 text-[#007AFF] text-[14px] font-semibold">
+<span class="">Join</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</div>
+</a>
+</div>
+</div>
+</main>
+<script>
+    function togglePasswordVisibility(fieldId, iconId) {
+      const input = document.getElementById(fieldId);
+      const icon = document.getElementById(iconId);
+      if (!input || !icon) return;
+      
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.textContent = 'visibility_off';
+      } else {
+        input.type = 'password';
+        icon.textContent = 'visibility';
+      }
+    }
+
+    function handleRegistrationSubmit() {
+      const pwd = document.getElementById('password-input')?.value;
+      const confirmPwd = document.getElementById('confirm-password-input')?.value;
+      const submitBtn = document.getElementById('submit-button');
+      const feedback = document.getElementById('registration-feedback');
+      const form = document.getElementById('subscriber-reg-form');
+
+      if (pwd !== confirmPwd) {
+        alert('Passwords do not match. Please verify your entry.');
+        return;
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">progress_activity</span><span class="ml-2">Creating Account...</span>';
+      }
+
+      setTimeout(() => {
+        if (form) form.classList.add('hidden');
+        if (feedback) feedback.classList.remove('hidden');
+      }, 700);
+    }
+  </script>
+
+
+</body></html>

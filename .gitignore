@@ -1,0 +1,19 @@
+node_modules
+dist
+dist-ssr
+*.local
+
+.env
+.env.local
+.env.production
+
+# Supabase service-role keys must never be committed
+.env.service-role
+
+.DS_Store
+*.log
+.vite/
+
+coverage
+.vscode/*
+!.vscode/settings.json

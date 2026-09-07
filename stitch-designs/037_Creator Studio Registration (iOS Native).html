@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..24,400..600,0..1,0" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0053db",
+            "primary-container": "#2563eb",
+            "on-primary": "#ffffff",
+            "surface": "#f8f9fc",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f2f4f8",
+            "surface-container": "#ebeef5",
+            "surface-container-high": "#e4e7f0",
+            "on-surface": "#111827",
+            "on-surface-variant": "#4b5563",
+            "outline": "#9ca3af",
+            "outline-variant": "#e5e7eb",
+            "secondary": "#0284c7"
+          },
+          fontFamily: {
+            sans: ["Inter", "-apple-system", "BlinkMacSystemFont", "SF Pro Text", "system-ui", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+      }
+      body {
+        overscroll-behavior-y: none;
+      }
+      .pb-safe {
+        padding-bottom: max(env(safe-area-inset-bottom, 16px), 16px);
+      }
+      .pt-safe {
+        padding-top: max(env(safe-area-inset-top, 0px), 0px);
+      }
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  </style>
+</head>
+<body class="bg-[#F2F2F7] font-sans text-on-surface antialiased min-h-screen flex flex-col selection:bg-blue-100">
+<!-- Apple iOS Clean Navigation Bar (Fixing overlap bug) -->
+<header class="sticky top-0 inset-x-0 z-50 bg-white border-b border-black/[0.08] pt-safe transition-all"><div class="h-11 px-4 flex items-center justify-between relative max-w-md mx-auto w-full"><button aria-label="Go back" class="flex items-center text-primary active:opacity-40 transition-opacity -ml-1 text-[17px] font-normal leading-none" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px] -mr-0.5">chevron_left</span><span class="">Back</span></button><div class="absolute left-1/2 -translate-x-1/2 font-semibold text-[17px] tracking-tight text-slate-900 pointer-events-none select-none text-center truncate max-w-[200px]">Creator Studio</div><a class="text-[17px] font-normal text-primary active:opacity-40 transition-opacity" href="#signin">Sign In</a></div></header>
+<!-- Main Content Container -->
+<main class="flex-1 flex flex-col w-full max-w-md mx-auto px-4 pt-5 pb-safe gap-5"><div class="flex flex-col gap-1 pt-2 px-1"><span class="text-[13px] font-semibold uppercase tracking-wider text-primary">Onboarding</span><h1 class="text-[32px] font-bold tracking-tight text-slate-900 leading-[38px]">Monetize Authentically</h1><p class="text-[15px] text-slate-500 leading-snug mt-0.5">Set your subscription price in INR (₹) and keep 88% net earnings with zero listing fees.</p></div><div class="bg-white rounded-[16px] border border-black/[0.08] shadow-[0_1px_2px_rgba(0,0,0,0.03)] grid grid-cols-3 divide-x divide-slate-100 py-3"><div class="flex flex-col items-center justify-center px-2 text-center"><span class="text-[20px] font-bold text-primary tracking-tight">88%</span><span class="text-[11px] font-medium text-slate-500 mt-0.5">Net Payout</span></div><div class="flex flex-col items-center justify-center px-2 text-center"><span class="text-[20px] font-bold text-slate-900 tracking-tight">₹0</span><span class="text-[11px] font-medium text-slate-500 mt-0.5">Setup Cost</span></div><div class="flex flex-col items-center justify-center px-2 text-center"><span class="text-[20px] font-bold text-slate-900 tracking-tight">T+1</span><span class="text-[11px] font-medium text-slate-500 mt-0.5">Payouts</span></div></div><div><div class="px-3 pb-1.5 text-[12px] font-medium uppercase tracking-wider text-slate-500">Account Details</div><div class="bg-white rounded-[16px] border border-black/[0.08] shadow-[0_1px_2px_rgba(0,0,0,0.03)] overflow-hidden"><div class="flex items-center min-h-[50px] px-4 gap-3"><label class="w-28 text-[15px] font-medium text-slate-800 shrink-0" for="creator-phone">Mobile</label><div class="flex items-center gap-1.5 text-[15px] font-semibold text-slate-700 select-none shrink-0"><span class="">🇮🇳</span><span class="">+91</span></div><input class="w-full bg-transparent text-[15px] text-slate-900 placeholder:text-slate-400 focus:outline-none" id="creator-phone" inputmode="numeric" maxlength="10" name="phone" placeholder="98200 12345" type="tel"></div><div class="h-[0.5px] bg-slate-200 ml-4"></div><div class="flex items-center min-h-[50px] px-4 gap-3"><label class="w-28 text-[15px] font-medium text-slate-800 shrink-0" for="creator-email">Payout Email</label><input class="w-full bg-transparent text-[15px] text-slate-900 placeholder:text-slate-400 focus:outline-none" id="creator-email" name="email" placeholder="creator@studio.in" type="email"></div><div class="h-[0.5px] bg-slate-200 ml-4"></div><div class="flex items-center min-h-[50px] px-4 gap-3"><label class="w-28 text-[15px] font-medium text-slate-800 shrink-0" for="creator-handle">Handle</label><span class="text-[15px] font-medium text-slate-400 select-none -mr-1.5">@</span><input class="w-full bg-transparent text-[15px] text-slate-900 placeholder:text-slate-400 focus:outline-none" id="creator-handle" name="handle" placeholder="rahulcomedy" type="text"></div><div class="h-[0.5px] bg-slate-200 ml-4"></div><div class="flex items-center min-h-[50px] px-4 gap-3"><label class="w-28 text-[15px] font-medium text-slate-800 shrink-0" for="creator-password">Password</label><input class="w-full bg-transparent text-[15px] text-slate-900 placeholder:text-slate-400 focus:outline-none" id="creator-password" name="password" placeholder="Required" type="password" value="SecretCode@2025"><button aria-label="Toggle password visibility" class="p-1 text-slate-400 hover:text-slate-600 active:opacity-50 transition-opacity shrink-0" id="pwd-toggle-btn" type="button"><span class="material-symbols-outlined text-[20px]" id="pwd-toggle-icon">visibility</span></button></div></div><div class="flex items-center justify-between px-3 pt-2 text-[12px] text-slate-500"><span class="">Indian (+91) numbers only • Instant payout verification</span><div class="flex items-center gap-1 shrink-0"><div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div><span class="text-[11px] font-medium text-slate-600">Strong password</span></div></div></div><div><div class="flex items-center justify-between px-3 pb-1.5"><span class="text-[12px] font-medium uppercase tracking-wider text-slate-500">Primary Discipline</span><span class="text-[12px] text-slate-400">Select one</span></div><div class="bg-white rounded-[16px] border border-black/[0.08] p-2.5 shadow-[0_1px_2px_rgba(0,0,0,0.03)]"><div class="flex flex-wrap gap-1.5" id="category-selector-group"><button class="cat-chip px-3 py-1.5 rounded-full bg-slate-100 active:bg-slate-200 text-[13px] font-medium text-slate-700 active:scale-95 transition-all flex items-center gap-1.5" type="button"><span class="material-symbols-outlined text-[15px]">newspaper</span><span class="">Journalism</span></button><button class="cat-chip active-chip px-3 py-1.5 rounded-full bg-primary text-white text-[13px] font-semibold active:scale-95 transition-all flex items-center gap-1.5 shadow-xs" type="button"><span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">mic</span><span class="">Stand-Up</span></button><button class="cat-chip px-3 py-1.5 rounded-full bg-slate-100 active:bg-slate-200 text-[13px] font-medium text-slate-700 active:scale-95 transition-all flex items-center gap-1.5" type="button"><span class="material-symbols-outlined text-[15px]">code</span><span class="">Tech &amp; AI</span></button><button class="cat-chip px-3 py-1.5 rounded-full bg-slate-100 active:bg-slate-200 text-[13px] font-medium text-slate-700 active:scale-95 transition-all flex items-center gap-1.5" type="button"><span class="material-symbols-outlined text-[15px]">palette</span><span class="">Classical Arts</span></button><button class="cat-chip px-3 py-1.5 rounded-full bg-slate-100 active:bg-slate-200 text-[13px] font-medium text-slate-700 active:scale-95 transition-all flex items-center gap-1.5" type="button"><span class="material-symbols-outlined text-[15px]">sports_esports</span><span class="">Gaming</span></button><button class="cat-chip px-3 py-1.5 rounded-full bg-slate-100 active:bg-slate-200 text-[13px] font-medium text-slate-700 active:scale-95 transition-all flex items-center gap-1.5" type="button"><span class="material-symbols-outlined text-[15px]">podcasts</span><span class="">Podcasts</span></button><button class="cat-chip px-3 py-1.5 rounded-full bg-slate-100 active:bg-slate-200 text-[13px] font-medium text-slate-700 active:scale-95 transition-all flex items-center gap-1.5" type="button"><span class="material-symbols-outlined text-[15px]">movie</span><span class="">Cinema</span></button></div></div></div><div class="bg-white rounded-[16px] border border-black/[0.08] p-3.5 flex items-start gap-3 shadow-[0_1px_2px_rgba(0,0,0,0.03)]"><span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">shield</span><div class="text-[13px] leading-relaxed text-slate-600"><span class="font-semibold text-slate-900 block mb-0.5">RBI &amp; IT Compliance</span>Per regulatory norms, creator settlements require standard PAN/Aadhaar verification. Instant onboarding with zero upfront fee.</div></div><div class="pt-2 flex flex-col gap-3"><button class="w-full h-[50px] rounded-[14px] bg-primary active:opacity-90 active:scale-[0.98] text-white font-semibold text-[17px] flex items-center justify-center gap-2 shadow-xs transition-all" type="button"><span class="">Create Creator Account</span><span class="material-symbols-outlined text-[20px]">arrow_forward</span></button><div class="flex flex-col items-center text-center gap-2 pt-1 pb-4"><a class="text-[14px] text-slate-500 hover:text-slate-800 active:opacity-50 transition-opacity" href="#login">Already registered? <span class="font-medium text-primary">Log in</span></a><a class="inline-flex items-center gap-1 text-[13px] text-slate-500 hover:text-slate-700 active:opacity-50 transition-opacity" href="#subscriber"><span class="">Switch to Subscriber Portal</span><span class="material-symbols-outlined text-[15px]">chevron_right</span></a></div></div></main>
+<script>
+    // Password visibility toggle
+    const pwdInput = document.getElementById('creator-password');
+    const pwdBtn = document.getElementById('pwd-toggle-btn');
+    const pwdIcon = document.getElementById('pwd-toggle-icon');
+
+    if (pwdBtn && pwdInput && pwdIcon) {
+      pwdBtn.addEventListener('click', () => {
+        const isPassword = pwdInput.type === 'password';
+        pwdInput.type = isPassword ? 'text' : 'password';
+        pwdIcon.textContent = isPassword ? 'visibility_off' : 'visibility';
+      });
+    }
+
+    // Interactive discipline chip selection
+    const chips = document.querySelectorAll('.cat-chip');
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => {
+          c.className = 'cat-chip px-3 py-1.5 rounded-full border border-slate-200 bg-slate-50 text-[13px] font-medium text-slate-700 hover:bg-slate-100 active:scale-95 transition-all flex items-center gap-1.5';
+          const icon = c.querySelector('.material-symbols-outlined');
+          if (icon) icon.style.fontVariationSettings = "'FILL' 0";
+        });
+
+        chip.className = 'cat-chip active-chip px-3 py-1.5 rounded-full border border-primary bg-primary text-[13px] font-semibold text-white shadow-xs active:scale-95 transition-all flex items-center gap-1.5';
+        const activeIcon = chip.querySelector('.material-symbols-outlined');
+        if (activeIcon) activeIcon.style.fontVariationSettings = "'FILL' 1";
+      });
+    });
+
+    // Mobile number 10-digit auto-limiter
+    const phoneInput = document.getElementById('creator-phone');
+    if (phoneInput) {
+      phoneInput.addEventListener('input', (e) => {
+        e.target.value = e.target.value.replace(/[^0-9]/g, '').slice(0, 10);
+      });
+    }
+  </script>
+
+
+</body></html>

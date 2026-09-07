@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "background": "#f9f9fe", "tertiary-container": "#196fc0", "on-tertiary-fixed": "#001c39", "secondary-container": "#2170e4", "surface-container-high": "#e8e8ed", "on-secondary-fixed": "#001a42", "secondary-fixed": "#d8e2ff", "on-surface-variant": "#434655", "tertiary-fixed": "#d4e3ff", "on-secondary-container": "#fefcff", "inverse-on-surface": "#f0f0f6", "surface": "#f9f9fe", "primary-fixed-dim": "#b4c5ff", "on-error": "#ffffff", "on-primary": "#ffffff", "primary-container": "#2563eb", "tertiary": "#00569c", "on-secondary": "#ffffff", "on-secondary-fixed-variant": "#004395", "surface-container-lowest": "#ffffff", "surface-dim": "#d9dadf", "on-error-container": "#93000a", "error": "#ba1a1a", "inverse-primary": "#b4c5ff", "inverse-surface": "#2e3035", "surface-container-highest": "#e2e2e7", "on-primary-fixed": "#00174b", "secondary": "#0058be", "secondary-fixed-dim": "#adc6ff", "on-primary-fixed-variant": "#003ea8", "outline-variant": "#c3c6d7", "on-surface": "#1a1c20", "surface-container": "#ededf3", "tertiary-fixed-dim": "#a4c9ff", "surface-bright": "#f9f9fe", "on-background": "#1a1c20", "on-tertiary": "#ffffff", "surface-container-low": "#f3f3f9", "primary": "#004ac6", "error-container": "#ffdad6", "on-primary-container": "#eeefff", "on-tertiary-fixed-variant": "#004883", "surface-tint": "#0053db", "primary-fixed": "#dbe1ff", "on-tertiary-container": "#ebf1ff", "outline": "#737686", "surface-variant": "#e2e2e7" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter-mobile": "1rem", "sm": "0.75rem", "2xl": "2rem", "3xl": "2.5rem", "max-width-content": "72rem", "xl": "1.5rem", "margin-page": "1.25rem", "md": "1rem", "gutter-desktop": "1.5rem", "lg": "1.25rem", "xs": "0.5rem", "2xs": "0.25rem" }, fontFamily: { "headline": ["Inter"], "title-1": ["Inter"], "large-title": ["Inter"], "footnote": ["Inter"], "callout": ["Inter"], "title-3": ["Inter"], "title-2": ["Inter"], "caption-1": ["Inter"], "caption-2": ["Inter"], "large-title-mobile": ["Inter"], "body": ["Inter"], "subheadline": ["Inter"] }, fontSize: { "headline": ["17px", { lineHeight: "22px", letterSpacing: "-0.01em", fontWeight: "600" }], "title-1": ["28px", { lineHeight: "34px", letterSpacing: "-0.02em", fontWeight: "700" }], "large-title": ["34px", { lineHeight: "41px", letterSpacing: "-0.022em", fontWeight: "700" }], "footnote": ["13px", { lineHeight: "18px", letterSpacing: "0em", fontWeight: "400" }], "callout": ["16px", { lineHeight: "21px", letterSpacing: "-0.005em", fontWeight: "400" }], "title-3": ["20px", { lineHeight: "25px", letterSpacing: "-0.01em", fontWeight: "600" }], "title-2": ["22px", { lineHeight: "28px", letterSpacing: "-0.015em", fontWeight: "600" }], "caption-1": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }], "caption-2": ["11px", { lineHeight: "13px", letterSpacing: "0.03em", fontWeight: "600" }], "large-title-mobile": ["28px", { lineHeight: "34px", letterSpacing: "-0.02em", fontWeight: "700" }], "body": ["17px", { lineHeight: "22px", letterSpacing: "-0.01em", fontWeight: "400" }], "subheadline": ["15px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-[#f2f2f7] font-body text-body text-[#000000] min-h-screen flex flex-col antialiased selection:bg-primary/20">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 inset-x-0 z-50 bg-[#f2f2f7]/80 backdrop-blur-xl border-b border-black/[0.08] pt-safe">
+<div class="h-11 px-4 flex items-center justify-between relative">
+<button class="h-11 min-w-[48px] flex items-center gap-1 text-[#007aff] font-body text-[17px] hover:opacity-70 active:opacity-40 transition-opacity -ml-2 pl-2" onclick="history.back()" type="button">
+<span class="material-symbols-outlined text-[20px] font-semibold leading-none">arrow_back_ios</span>
+<span>Back</span>
+</button>
+<div class="absolute inset-0 mx-auto flex items-center justify-center pointer-events-none px-16">
+<h1 class="text-[17px] font-semibold text-[#000000] tracking-[-0.01em] truncate text-center">Subscription Tiers</h1>
+</div>
+<button class="h-11 min-w-[48px] flex items-center justify-end text-[#007aff] font-body text-[17px] hover:opacity-70 active:opacity-40 transition-opacity pr-1" type="button">
+          Help
+        </button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col relative w-full pt-[calc(env(safe-area-inset-top,0px)+44px)] pb-36 bg-[#f2f2f7]">
+<!-- Step 5 of 5 Progress Bar -->
+<div class="px-5 pt-3 pb-2">
+<div class="flex items-center justify-between mb-1.5">
+<span class="text-[12px] font-semibold text-[#8e8e93] uppercase tracking-wider">Step 5 of 5</span>
+<span class="text-[12px] font-medium text-[#2563eb]">100% Completed</span>
+</div>
+<div class="grid grid-cols-5 gap-1.5 h-1">
+<div class="bg-[#2563eb] rounded-full h-full"></div>
+<div class="bg-[#2563eb] rounded-full h-full"></div>
+<div class="bg-[#2563eb] rounded-full h-full"></div>
+<div class="bg-[#2563eb] rounded-full h-full"></div>
+<div class="bg-[#2563eb] rounded-full h-full"></div>
+</div>
+</div>
+<!-- Large Page Title & Subtitle -->
+<div class="px-5 pt-3 pb-4">
+<h2 class="text-[28px] font-bold text-[#000000] tracking-tight leading-[34px]">Subscription Pricing</h2>
+<p class="text-[15px] text-[#6c6c70] leading-[20px] mt-1.5">
+          Set your creator-controlled monthly INR tier. Keep sovereign control with an industry-leading 88% direct net payout.
+        </p>
+</div>
+<!-- Content Sections (iOS Grouped Style) -->
+<div class="space-y-6 px-4">
+<!-- Section 1: Pricing Selector & Breakdown -->
+<div>
+<div class="px-2 pb-1.5 text-[13px] font-medium text-[#6c6c70] uppercase tracking-wider">Tier Rate &amp; Payout</div>
+<div class="bg-white rounded-2xl p-4 shadow-sm border border-black/[0.04] space-y-4">
+<!-- Preset Selector -->
+<div>
+<div class="text-[13px] text-[#8e8e93] mb-2 font-medium">Select monthly subscription fee</div>
+<div class="grid grid-cols-5 gap-1.5">
+<button class="py-2.5 rounded-xl text-[14px] font-medium bg-[#f2f2f7] text-[#1c1c1e] hover:bg-[#e5e5ea] active:scale-95 transition-all" type="button">
+                  ₹99
+                </button>
+<button class="py-2.5 rounded-xl text-[14px] font-medium bg-[#f2f2f7] text-[#1c1c1e] hover:bg-[#e5e5ea] active:scale-95 transition-all" type="button">
+                  ₹199
+                </button>
+<button class="py-2.5 rounded-xl text-[14px] font-bold bg-[#2563eb] text-white shadow-sm ring-2 ring-[#2563eb]/30 active:scale-95 transition-all" type="button">
+                  ₹299
+                </button>
+<button class="py-2.5 rounded-xl text-[14px] font-medium bg-[#f2f2f7] text-[#1c1c1e] hover:bg-[#e5e5ea] active:scale-95 transition-all" type="button">
+                  ₹499
+                </button>
+<button class="py-2.5 rounded-xl text-[14px] font-medium bg-[#f2f2f7] text-[#1c1c1e] hover:bg-[#e5e5ea] active:scale-95 transition-all" type="button">
+                  ₹999
+                </button>
+</div>
+</div>
+<!-- 88% Payout Breakdown -->
+<div class="bg-[#f9f9fb] rounded-xl p-3.5 border border-black/[0.05] space-y-2.5">
+<div class="flex items-center justify-between text-[14px]">
+<span class="text-[#6c6c70]">Gross subscriber fee</span>
+<span class="font-semibold text-[#1c1c1e]">₹299.00</span>
+</div>
+<div class="flex items-center justify-between text-[14px]">
+<span class="text-[#6c6c70]">Platform fee &amp; GST/TDS (12%)</span>
+<span class="text-[#ba1a1a] font-medium">-₹35.88</span>
+</div>
+<div class="pt-2 border-t border-black/[0.06] flex items-center justify-between">
+<div>
+<div class="text-[12px] font-semibold uppercase tracking-wider text-[#1c1c1e]">Net Take-Home</div>
+<div class="text-[11px] text-[#8e8e93]">Per subscriber / month</div>
+</div>
+<div class="bg-emerald-50 text-emerald-700 border border-emerald-200/80 px-3 py-1 rounded-full text-[15px] font-bold tracking-tight">
+                  ₹263.12 (88%)
+                </div>
+</div>
+</div>
+<!-- Settlement Info Banner -->
+<div class="flex items-center gap-2.5 text-[12px] text-[#6c6c70] px-0.5">
+<span class="material-symbols-outlined text-[18px] text-emerald-600">verified_user</span>
+<span>Instant UPI AutoPay &amp; guaranteed T+1 domestic bank deposits.</span>
+</div>
+</div>
+</div>
+<!-- Section 2: Revenue Forecaster -->
+<div>
+<div class="px-2 pb-1.5 text-[13px] font-medium text-[#6c6c70] uppercase tracking-wider">Monthly Revenue Forecast</div>
+<div class="bg-white rounded-2xl p-4 shadow-sm border border-black/[0.04]">
+<div class="grid grid-cols-3 divide-x divide-black/[0.06] text-center">
+<div class="px-2">
+<div class="text-[12px] font-medium text-[#8e8e93]">100 fans</div>
+<div class="text-[16px] font-bold text-[#1c1c1e] mt-1">₹26,312</div>
+<div class="text-[10px] text-[#8e8e93]">/month</div>
+</div>
+<div class="px-2">
+<div class="text-[12px] font-medium text-[#8e8e93]">500 fans</div>
+<div class="text-[16px] font-bold text-[#2563eb] mt-1">₹1,31,560</div>
+<div class="text-[10px] text-[#8e8e93]">/month</div>
+</div>
+<div class="px-2">
+<div class="text-[12px] font-medium text-[#8e8e93]">2,000 fans</div>
+<div class="text-[16px] font-bold text-emerald-600 mt-1">₹5,26,240</div>
+<div class="text-[10px] text-[#8e8e93]">/month</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: Included Perks & Deliverables -->
+<div>
+<div class="px-2 pb-1.5 text-[13px] font-medium text-[#6c6c70] uppercase tracking-wider">Included Perks &amp; Deliverables</div>
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-black/[0.04] divide-y divide-black/[0.05]">
+<div class="p-3.5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-[#2563eb]">
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+</div>
+<div>
+<div class="text-[15px] font-medium text-[#1c1c1e]">Direct HD Feed &amp; Masterclasses</div>
+<div class="text-[12px] text-[#8e8e93]">Ad-free exclusive content stream</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-[20px] text-[#2563eb]">check_circle</span>
+</div>
+<div class="p-3.5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-[#2563eb]">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</div>
+<div>
+<div class="text-[15px] font-medium text-[#1c1c1e]">Priority Subscriber DM &amp; Comments</div>
+<div class="text-[12px] text-[#8e8e93]">Highlighted creator badges in discussions</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-[20px] text-[#2563eb]">check_circle</span>
+</div>
+<div class="p-3.5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-[#2563eb]">
+<span class="material-symbols-outlined text-[18px]">mic</span>
+</div>
+<div>
+<div class="text-[15px] font-medium text-[#1c1c1e]">Member-only Audio Hangouts</div>
+<div class="text-[12px] text-[#8e8e93]">Bi-weekly interactive live rooms</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-[20px] text-[#2563eb]">check_circle</span>
+</div>
+<div class="p-3.5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600">
+<span class="material-symbols-outlined text-[18px]">lock_reset</span>
+</div>
+<div>
+<div class="text-[15px] font-medium text-[#1c1c1e]">1-Click Zero-Friction UPI Cancellation</div>
+<div class="text-[12px] text-[#8e8e93]">Boosts conversion with complete user trust</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-[20px] text-[#2563eb]">check_circle</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Sticky Safe Area CTA -->
+<footer class="fixed bottom-0 inset-x-0 z-50 bg-white/85 backdrop-blur-xl border-t border-black/[0.08] px-4 pt-3 pb-[max(env(safe-area-inset-bottom,0px),16px)]">
+<div class="max-w-md mx-auto space-y-2">
+<button class="w-full h-[50px] bg-[#2563eb] text-white font-semibold text-[17px] rounded-full shadow-md active:scale-[0.98] transition-transform duration-100 flex items-center justify-center gap-2" type="button">
+<span>Publish Subscription &amp; Finish</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<button class="w-full py-1 text-center text-[15px] font-medium text-[#007aff] hover:opacity-75 active:opacity-50 transition-opacity" type="button">
+          Save Draft
+        </button>
+</div>
+</footer>
+</body></html>
