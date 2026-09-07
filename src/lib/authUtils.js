@@ -25,15 +25,62 @@ export const isValidEmail = (input = '') => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test
 
 export const passwordPolicy = {
   min: 8,
+  max: 64,
   description: 'At least 8 characters with letters and numbers'
 }
-export const isValidPassword = (pw = '') => String(pw).length >= passwordPolicy.min && /[a-zA-Z]/.test(pw) && /\d/.test(pw)
 
-// Lowercase alphanumeric + underscore, 3-30 chars (mirrors check_username_available RPC).
+export const isValidPassword = (pw = '') => {
+  const s = String(pw)
+  return s.length >= passwordPolicy.min && s.length <= passwordPolicy.max && /[a-zA-Z]/.test(s) && /\d/.test(s)
+}
+
+const COMMON_PASSWORDS = new Set([
+  'password', 'password123', '12345678', '123456789', 'qwerty123',
+  'admin123', 'welcome123', 'password1', 'abc12345', 'letmein123',
+  'monkey123', 'dragon123', 'sunshine1', 'princess1', 'football1',
+])
+
+export const PASSWORD_STRENGTH_LABELS = ['', 'Weak', 'Fair', 'Good', 'Strong']
+export const PASSWORD_STRENGTH_COLORS = ['transparent', '#ba1a1a', '#e67e22', '#f39c12', '#00a794']
+
+export function calculatePasswordStrength(password = '') {
+  if (!password) return 0
+  if (COMMON_PASSWORDS.has(password.toLowerCase())) return 1
+
+  let score = 0
+  if (password.length >= 8) score++
+  if (password.length >= 12) score++
+  if (/[a-z]/.test(password) && /[A-Z]/.test(password)) score++
+  if (/\d/.test(password)) score++
+  if (/[^a-zA-Z0-9]/.test(password)) score++
+
+  return Math.min(score, 4)
+}
+
+export function getPasswordStrengthLabel(password = '') {
+  return PASSWORD_STRENGTH_LABELS[calculatePasswordStrength(password)]
+}
+
+export function getPasswordStrengthColor(password = '') {
+  return PASSWORD_STRENGTH_COLORS[calculatePasswordStrength(password)]
+}
+
 export const slugifyUsername = (input = '') => String(input).toLowerCase().replace(/[^a-z0-9_]/g, '')
+
 export const isValidUsername = (slug = '') => /^[a-z0-9_]{3,30}$/.test(slug)
 
-// A credential is "phone-like" when the user typed +91/leading digits (phone-first UX).
+const RESERVED_USERNAMES = new Set([
+  'admin', 'administrator', 'root', 'api', 'www', 'mail', 'ftp',
+  'support', 'help', 'info', 'contact', 'about', 'terms', 'privacy',
+  'login', 'register', 'signup', 'signin', 'logout', 'password',
+  'reset', 'verify', 'auth', 'oauth', 'sso', 'dashboard', 'settings',
+  'profile', 'account', 'billing', 'subscription', 'creator', 'subscriber',
+  'onlyindians', 'india', 'indian', 'official', 'team', 'staff',
+  'moderator', 'mod', 'superuser', 'system', 'null', 'undefined',
+])
+
+export const isReservedUsername = (username = '') => RESERVED_USERNAMES.has(username.toLowerCase())
+
 export const looksLikePhone = (credential = '') => {
   const c = String(credential).trim()
   if (!c) return false
@@ -41,8 +88,6 @@ export const looksLikePhone = (credential = '') => {
   return /^[0-9]{10,11}$/.test(c.replace(/[\s-]/g, ''))
 }
 
-// Reads ?next= from the current URL (used to route post-verification).
-// Only in-app paths are accepted; protocol-relative strings are refused.
 export function readNextPath(search = window.location.search, fallback = '/') {
   if (!search) return fallback
   const next = new URLSearchParams(search).get('next')
@@ -50,3 +95,5 @@ export function readNextPath(search = window.location.search, fallback = '/') {
 }
 
 export const EMAIL_REDIRECT = (role) => `/verify?next=/${role}/onboarding/profile`
+
+export const RESEND_COOLDOWN_SECONDS = 60

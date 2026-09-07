@@ -42,7 +42,7 @@ describe('T-13 — RequireRole guard matrix', () => {
 
   it('redirects a subscriber away from the creator portal', async () => {
     authMocks.setSession(SESSION('subscriber'))
-    authMocks.setProfileRow(PROFILE('subscriber', { onboarded: true }))
+    authMocks.setProfileRow(PROFILE('subscriber', { verified: true, onboarded: true }))
     renderAt('/creator')
     await waitFor(() => expect(window.location.pathname).toBe('/subscriber/login'))
   })
@@ -104,10 +104,12 @@ describe('T-14 — GuestOnly + phone-first sign-in', () => {
     await screen.findByText('Sign In · Subscriber')
 
     await user.type(screen.getByLabelText(/mobile number/i), '1234567890')
+    await user.tab() // trigger blur to run validation
     await user.type(screen.getByLabelText(/^password \*/i), 'Secret@123')
     await user.click(screen.getByRole('button', { name: 'Sign In' }))
 
-    expect(await screen.findByText(/enter a valid 10-digit indian mobile/i)).toBeInTheDocument()
+    const errorElements = await screen.findAllByText(/enter a valid 10-digit indian mobile/i)
+    expect(errorElements.length).toBeGreaterThan(0)
     expect(authMocks.lastSignInArgs).toBeNull()
   })
 })
@@ -118,10 +120,18 @@ describe('T-15 — subscriber registration + verification flow', () => {
     renderAt('/subscriber/register')
     await screen.findByText('Create Subscriber Account')
 
-    await user.type(screen.getByLabelText(/mobile number/i), '9876543210')
+await user.type(screen.getByLabelText(/mobile number/i), '9876543210')
     await user.type(screen.getByLabelText(/email address/i), 'dev@example.com')
     await user.type(screen.getByLabelText(/^password \*/i), 'Creator@123')
+    await user.type(screen.getByLabelText(/confirm password/i), 'Creator@123')
+    const labels = screen.getAllByRole('checkbox').map(cb => cb.closest('label'))
+    await user.click(labels[0])
+    await waitFor(() => expect(screen.getAllByRole('checkbox')[0]).toBeChecked())
+    await user.click(labels[1])
+    await waitFor(() => expect(labels[1].querySelector('input')).toBeChecked())
     await user.click(screen.getByRole('button', { name: 'Create Account' }))
+    await waitFor(() => expect(authMocks.lastSignUpArgs).not.toBeNull())
+    await waitFor(() => expect(window.location.pathname).toBe('/subscriber/check-email'))
 
     await waitFor(() => expect(window.location.pathname).toBe('/subscriber/check-email'))
     expect(await screen.findByText('Verify Your Email')).toBeInTheDocument()
